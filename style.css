@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial;
+    font-size: 12pt;
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#crop-div {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    bottom: 300px;
+    right: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: move;
+    /*    border: 2px solid rgba(0, 0, 0, 0.5);*/
+}
+
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: dodgerblue;
+}
+.corner.north {
+    top: 0;
+}
+.corner.west {
+    left: 0;
+}
+.corner.east {
+    right: 0;
+}
+.corner.south {
+    bottom: 0;
+}
+.corner.north.west {
+    cursor: nw-resize;
+}
+.corner.north.east {
+    cursor: ne-resize;
+}
+.corner.south.east {
+    cursor: se-resize;
+}
+.corner.south.west {
+    cursor: sw-resize;
+}
+
+.border {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+.border.left {
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: w-resize;
+}
+.border.top {
+    height: 4px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: n-resize;
+}
+.border.right {
+    width: 4px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    cursor: e-resize;
+}
+.border.bottom {
+    width: 100%;
+    height: 4px;
+    right: 0;
+    bottom: 0;
+    cursor: s-resize;
+}
+
+#filechooser {
+    display: none;
+}
+
+#controls-wrapper {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    text-align: center;
+}
+#controls {
+}
+
+#control-rotate {
+    vertical-align: middle;
+}
+.text {
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.showanim {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    
+    border: 2px solid dodgerblue;
+    background-color: dodgerblue;
+    color: white;
+    transition: 0.2s;
+}
+.btn:hover {
+/*    border: 2px solid dodgerblue;*/
+    background-color: white;
+    color: dodgerblue;
+}

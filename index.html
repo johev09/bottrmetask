@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <Title>Crop &amp; Rotate</Title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="crop-div" class="showanim">
+        <span class="border left"></span>
+        <span class="border top"></span>
+        <span class="border right"></span>
+        <span class="border bottom"></span>
+
+        <span class="corner north west"></span>
+        <span class="corner north east"></span>
+        <span class="corner south west"></span>
+        <span class="corner south east"></span>
+    </div>
+
+    <div id="controls-wrapper">
+        <div id="controls" class="showanim">
+            <span class="btn crop" id="control-crop">CROP</span>
+            <input id="control-rotate" type="range" min="0" max="360" value="0" />
+            <span id="rotate-value" class="text">0°</span>
+            <span class="text">ROTATE</span>
+        </div>
+        <br>
+        <input type="file" id="filechooser" value="Image?" accept="image/*">
+        <label for="filechooser" class="btn"><strong>Image File?</strong></label>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
